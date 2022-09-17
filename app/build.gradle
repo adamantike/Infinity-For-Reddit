@@ -29,6 +29,10 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix ' (DEBUG)'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -186,4 +190,5 @@ dependencies {
 /**** Builds and flavors ****/
     // debugImplementation because LeakCanary should only run in debug builds.
     //debugImplementation 'com.squareup.leakcanary:leakcanary-android:x.y'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 }
